@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="in">
+<head>
+<title>UTS SIG WEB_Rivaldo</title>
+<link href="logo_AHE.jpeg" rel="icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    table, th, td {
+  border:1px solid black;
+}
+* {
+  box-sizing: border-box;
+}
+.pembuka {
+  background-color: #ff6700;
+  padding:150px;
+  background-image: url('foto_siswa_background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  text-align: center;
+
+  
+}
+
+body {
+  font-family: "Times New Roman", Helvetica, sans-serif;
+  margin: 100;
+}
+
+.pembuka h1 {
+  font-size: 110px;
+}
+.pembuka p{
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  font-size: 50px;
+}
+
+.penutup p{
+  color:white;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: purple;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a.right {
+  float: right;
+}
+
+.navbar a:hover {
+  background-color: orange;
+  color: black;
+}
+
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side {
+  flex: 30%;
+  background-color:#ff9e4f;
+  padding: 20px;
+}
+
+.main {   
+  flex: 70%;
+  background-color: #ff6700;
+  padding: 20px;
+}
+.main {
+  background-image: url('foto_latar_utama.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: contain;
+  text-align: left;
+  background-position: right;
+  
+
+}
+.main p{
+  color:white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+ 
+
+}
+.main h2{
+  color:white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
+
+
+
+
+.penutup {
+  padding: 20px;
+  text-align: center;
+  background: purple;
+}
+
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}
+p {
+  color:black;
+}
+
+</style>
+</head>
+<body>
+
+<div class="pembuka">
+    <h1>UTS Praktikum SIG Web</h1>
+  <br><br><br><br><br><br>
+</div>
+
+<h1>Essai materi mata kuliah SIG WEB</h1>
+<p>Secara keseluruhan sudah dibahas bagaimana internet bekerja melalui 
+  sistemnya yang rumit, kemudian apa saja komponen yang membangun sebuah
+   website, seperti HTML sebagai elemen tubuh, CSS sebagai penghias atau 
+   pengedit tampilan agar lebih menarik dan Javascript yang akan menambahkan
+    action sehingga halaman web lebih interaktif. HTML dan CSS bukan bahasa
+     pemrograman tetapi hanya bahasa <b>MARKUP</b>. Berbeda dengan Javascript
+      yang merupakan bahasa <b>PEMROGRAMAN</b>. Selain itu juga dipelajari tentang 
+      penggunaan Bootstrapt untuk halaman web, bisa juga dengan menggunakan template
+       yang ada di web bootstrap. Juga dipelajari penambahan peta ke dalam website dengan 
+       cara paling sederhana yaitu menggunakan leaflet. Dilanjutkan dengan penambahan File 
+       Geojson format ke dalam website. File vektor bisa diubah menjadi GEOJSON dan bisa ditambahkan ke dalam website.</p>
+<a href="https://www.bing.com/ck/a?!&&p=739b048180db2049JmltdHM9MTY5NjcyMzIwMCZpZ3VpZD0wMjE5YzQxNy1iZGViLTY5MDUtMzAwYi1kNzhmYmNiZDY4NTYmaW5zaWQ9NTE4Nw&ptn=3&hsh=3&fclid=0219c417-bdeb-6905-300b-d78fbcbd6856&psq=website+geodesi+ugm&u=a1aHR0cHM6Ly9nZW9kZXNpLnVnbS5hYy5pZC8&ntb=1">
+    Klik untuk menuju Website resmi Geodesi UGM
+</a>
+<h2 style="color:purple">Hasil Peta</h2>
+<a href ="web_peta/index.html">Klik Untuk menuju web peta</a><br><br><br.<br>
+<p><i>Peta di atas adalah peta tempat favorit saya yang berada di lokasi</i></p><p style="color:rgb(218, 89, 19)"><b>UGM</b></p>
+
+<table style="width:23%">
+    <tr>
+      <th><b style="color:#ff6700">Nama Pembuat WEB</b></th>
+      <th><b style="color:#ff9e4f">NIM Pembuat WEB</b></th>
+    </tr>
+    <tr>
+      <td>Rivaldo Putra</td>
+      <td>21/473944/TK/52260</td>
+    </tr>
+    
+  </table>
+ 
+  Nama : <input type="text" id="namapembuat"><br>
+Password : <input type="password" id="password"><br>
+<input type="checkbox" onclick="fungsitutuppassword()">Tampilkan Password<br>
+<button onclick="cekpassword()">Klik</button>
+  <script>
+    function fungsitutuppassword() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+  function cekpassword() {
+	var password = document.getElementById("password").value;
+	var nama = document.getElementById("namapembuat").value;
+	
+	
+	if (nama!=="" && password == "Selesai" ) {
+		alert("Halo! "+nama+". Pekerjaan Anda Sudah Selesai, Good Luck :)");
+		
+	}
+	else if(nama !== "" &&  password !== "Selesai" &password !== "") {
+		alert("Password atas nama "+nama+" yang Anda masukkan SALAH, Silakan Coba lagi!");	
+	}
+	else if (nama =="" && password !== "") {
+		alert("ERROR! Anda belum isikan nama! Silakan Ulangi dan Isi dengan benar!");
+	}
+	else if (nama !== "" && password =="") {
+		alert("ERROR! "+nama+" Anda belum isikan password! Silakan ulangi");
+	}
+	else if (nama == "" && password =="" ) {
+		alert("ERROR! Anda belum memasukkan seluruh data yang dibutuhkan untuk GFORM");
+	}
+}
+
+</script>
+
+<div class="penutup">
+  <p>UTS Praktikum SIG Web</p>
+</div>
+
+</body>
+</html>
+
